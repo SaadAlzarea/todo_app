@@ -1,0 +1,61 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./todo-backend
+    container_name: todo-backend
+    ports:
+      - "4000:4000"
+    environment:
+      PORT: 4000
+      DB_URL_SQL_POSTGRESQL: postgresql://postgres:1234@postgres:5432/todo_app
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      MINIO_ENDPOINT: http://minio:9000
+    depends_on:
+      - postgres
+      - redis
+      - minio
+
+  frontend:
+    build: ./todo-frontend
+    container_name: todo-frontend
+    ports:
+      - "4001:4001"
+    environment:
+      VITE_backendServer_URL: http://localhost:4000
+    depends_on:
+      - backend
+
+  postgres:
+    image: postgres:16
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: todo_app
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  minio:
+    image: minio/minio
+    container_name: minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    command: server /data --console-address ":9001"
+
+volumes:
+  pgdata:
