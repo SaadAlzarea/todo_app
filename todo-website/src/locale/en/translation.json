@@ -1,0 +1,41 @@
+{
+	"Main": "Main",
+	"Service": "Service",
+	"Feature": "Feature",
+	"Download": "Join Us",
+	"hero" : {
+		"title": "UrTodo",
+		"description": "Manage your tasks individually or with your team and groups — stay organized, collaborate easily, and get things done faster"
+	},
+	"about": {
+		"WHO ARE WE!": "WHO ARE WE!",
+		"title" : "Manage Your Time Effectively",
+		"description": "UrTodo is a task management application designed to help individuals and teams stay organized and productive. With a user-friendly interface and powerful features, UrTodo allows you to create, manage, and track your tasks efficiently. Whether you're working on personal projects or collaborating with a team, UrTodo provides the tools you need to stay on top of your work and achieve your goals."
+	},
+	"features": {
+		"HOW TO MANAGE A": "HOW TO MANAGE A",
+		"NEW BUSINESS": "NEW BUSINESS",
+		"individual and": "individual and",
+		"organization": "organization",
+		"description": "Create your tasks, set deadlines, and track your progress with ease. UrTodo's intuitive interface allows you to prioritize your work, collaborate with your team, and stay organized. Whether you're managing a personal project or leading a team, UrTodo provides the tools you need to succeed.",
+		"FEATURES" : "FEATURES",
+		"Deadline calendar":"Deadline calendar",
+		"Individual and team project": "Individual and team project",
+		"Assign todo and attachments": "Assign todo and attachments"
+	},
+	"contact": {
+		"title": "CONTACT US",
+		"description": "Have a question or feedback? Fill out the form and we'll get back to you as soon as possible.",
+		"form": {
+			"title": "GET IN TOUCH",
+			"name": "Name",
+			"email": "Email",
+			"message": "Message",
+			"send": "Send Message"
+		}
+    },
+	"joinUs": {
+		"JOIN US!": "JOIN US!",
+		"button": "GET STARTED"
+	}
+}

@@ -27,6 +27,17 @@ services:
     depends_on:
       - backend
 
+  website:
+    build: ./todo-website
+    container_name: todo-website
+    ports:
+      - "4002:4002"
+    environment:
+      VITE_backendServer_URL: http://localhost:4000
+    depends_on:
+      - backend
+      - frontend
+
   postgres:
     image: postgres:16
     container_name: postgres
